@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100..900;1,100..900&family=Fredoka:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Fredoka', sans-serif;
+  --font-body: 'Be Vietnam Pro', sans-serif;
+  
+  --color-bg-app: var(--bg-app);
+  --color-bg-card: var(--bg-card);
+  --color-text-main: var(--text-main);
+  --color-border-main: var(--border-main);
+  --color-shadow-main: var(--shadow-main);
+}
+
+:root {
+  --bg-app: #FEF3C7; /* warm sand */
+  --bg-card: #FFFFFF;
+  --text-main: #000000;
+  --border-main: #000000;
+  --shadow-main: #000000;
+}
+
+.dark {
+  --bg-app: #0F172A; /* slate-900 */
+  --bg-card: #1E293B; /* slate-800 */
+  --text-main: #F8FAFC; /* slate-50 */
+  --border-main: #F8FAFC;
+  --shadow-main: #F8FAFC;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Neo-Brutalism Styles */
+.brutalist-card {
+  background-color: var(--bg-card);
+  border: 3px solid var(--border-main);
+  box-shadow: 4px 4px 0px 0px var(--shadow-main);
+  border-radius: 0.75rem;
+  color: var(--text-main);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.brutalist-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--border-main);
+  box-shadow: 4px 4px 0px 0px var(--shadow-main);
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.1s ease, background-color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+}
+
+.brutalist-btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--shadow-main);
+}
+
+.brutalist-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--shadow-main);
+}
+
+.brutalist-btn:disabled {
+  background-color: #94A3B8 !important;
+  color: #475569 !important;
+  border-color: #475569 !important;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: 2px 2px 0px 0px var(--shadow-main) !important;
+  opacity: 0.6;
+}
+
+.brutalist-input {
+  background-color: var(--bg-card);
+  border: 3px solid var(--border-main);
+  color: var(--text-main);
+  border-radius: 0.75rem;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.1s ease, background-color 0.2s ease, border-color 0.2s ease;
+  box-shadow: 2px 2px 0px 0px var(--shadow-main);
+}
+
+.brutalist-input:focus {
+  box-shadow: 4px 4px 0px 0px var(--shadow-main);
+  outline: none;
+}
+
+/* AI recommendations headers styled as prominent brutalist badges */
+.ai-recommendations h3 {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  color: #000000 !important;
+  border: 3px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Dark mode overrides for badges to maintain heavy black borders and high visibility */
+.dark .ai-recommendations h3 {
+  border-color: #F8FAFC;
+  box-shadow: 3px 3px 0px 0px #F8FAFC;
+}
+
+.ai-recommendations h3:nth-of-type(1) {
+  background-color: #F472B6 !important; /* Rose/Pink highlight */
+}
+
+.ai-recommendations h3:nth-of-type(2) {
+  background-color: #4ADE80 !important; /* Emerald/Green highlight */
+}

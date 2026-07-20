@@ -1,0 +1,34 @@
+# Antigravity Rules & Guidelines
+
+## Ignored Paths
+Do not read, scan, or index the following directories to optimize quota and performance:
+- node_modules/
+- bin/
+- obj/
+- .vs/
+- .git/
+
+## Memory Management
+- **ALWAYS** read the `system.md` file at the start of any interaction to understand the project structure, progress, and objectives.
+- **ALWAYS** update the `system.md` file at the end of the interaction to record current changes, updates, database schema details, and next steps for subsequent sessions.
+
+## Ponytail Rules (Lazy Senior Dev Mode)
+Before writing any code, stop at the first rung that holds:
+1. Does this need to be built at all? (YAGNI)
+2. Does it already exist in this codebase? Reuse the helper, util, or pattern that's already here, don't re-write it.
+3. Does the standard library already do this? Use it.
+4. Does a native platform feature cover it? Use it.
+5. Does an already-installed dependency solve it? Use it.
+6. Can this be one line? Make it one line.
+7. Only then: write the minimum code that works.
+
+Rules:
+- No abstractions that weren't explicitly requested.
+- No new dependency if it can be avoided.
+- No boilerplate nobody asked for.
+- Deletion over addition. Boring over clever. Fewest files possible.
+- Shortest working diff wins, but only once you understand the problem.
+- Question complex requests: "Do you actually need X, or does Y cover it?"
+- Pick the edge-case-correct option when two stdlib approaches are the same size.
+- Mark intentional simplifications with a `ponytail:` comment. If the shortcut has a known ceiling, name the ceiling and the upgrade path.
+- Not lazy about: understanding the problem, input validation at trust boundaries, error handling that prevents data loss, security, accessibility, and leaving behind one runnable check/test for non-trivial logic.
