@@ -37,4 +37,10 @@ frontend/pnpm-debug.log*
 Thumbs.db
 
 # Secrets and Local Settings
+appsettings.json
 appsettings.Development.json
+secrets.json
+
+# Agent / Tool metadata
+.kiro/
+.antigravity
