@@ -44,6 +44,9 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+// Render sẽ cấp port qua biến môi trường PORT
+var post = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Urls.Add($"http://*:{post}");
 
 // Configure the HTTP request pipeline.(Middleware)
 if (app.Environment.IsDevelopment())
