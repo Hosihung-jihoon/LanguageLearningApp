@@ -15,6 +15,9 @@ FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
 COPY --from=build /app/out .
 
+# Biến môi trường ngăn chặn lỗi inotify file watcher limit trên Linux/Render
+ENV DOTNET_USE_POLLING_FILE_WATCHER=1
+
 # Mở port
 EXPOSE 8080
 
